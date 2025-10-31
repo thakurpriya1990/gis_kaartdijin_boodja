@@ -286,6 +286,7 @@ if not os.path.exists(AZURE_OUTPUT_SYNC_DIRECTORY):
 EMAIL_BACKEND = "wagov_utils.components.utils.email_backend.EmailBackend"
 EMAIL_HOST = decouple.config("EMAIL_HOST", default="smtp.lan.fyi")
 EMAIL_PORT = decouple.config("EMAIL_PORT", default=25, cast=int)
+DEPT_DOMAINS = decouple.config("DEPT_DOMAINS", default="dbca.wa.gov.au")
 DEFAULT_FROM_EMAIL = "no-reply@dbca.wa.gov.au"
 EMAIL_INSTANCE = decouple.config("EMAIL_INSTANCE", default="PROD")
 NON_PROD_EMAIL = decouple.config("NON_PROD_EMAIL", default="")
