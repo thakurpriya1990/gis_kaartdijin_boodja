@@ -328,6 +328,7 @@ GEOSERVER_LAYER_HEALTH_CHECK_PERIOD_MINS = decouple.config('GEOSERVER_LAYER_HEAL
 GEOSERVER_SYNC_LAYERS_PERIOD_MINS = decouple.config('GEOSERVER_SYNC_LAYERS_PERIOD_MINS', default=2)
 GEOSERVER_SYNC_RULES_PERIOD_MINS = decouple.config('GEOSERVER_SYNC_RULES_PERIOD_MINS', default=2)
 GEOSERVER_SYNC_USERS_PERIOD_MINS = decouple.config('GEOSERVER_SYNC_USERS_PERIOD_MINS', default=2)
+SYNC_ITASSETS_USERS_PERIOD_MINS = decouple.config('SYNC_ITASSETS_USERS_PERIOD_MINS', default=2)
 CRON_CLASSES = [
     "govapp.apps.catalogue.cron.PostgresScannerCronJob",
     "govapp.apps.catalogue.cron.SharepointScannerCronJob",
@@ -337,6 +338,7 @@ CRON_CLASSES = [
     "govapp.apps.publisher.cron.GeoServerSyncLayersCronJob", # layers
     "govapp.apps.publisher.cron.GeoServerSyncRulesCronJob", # rules
     "govapp.apps.accounts.cron.GeoServerSyncUsersCronJob", # users
+    "govapp.apps.accounts.cron.SyncItassetsUsersCronJob", # users
     'appmonitor_client.cron.CronJobAppMonitorClient'
 ]
 MANAGEMENT_COMMANDS_PAGE_ENABLED = decouple.config('MANAGEMENT_COMMANDS_PAGE_ENABLED', default=False, cast=bool)
