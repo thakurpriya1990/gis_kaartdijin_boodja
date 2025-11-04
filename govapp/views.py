@@ -376,7 +376,7 @@ class CatalogueEntriesView(base.TemplateView):
         # Symbology tab
         if catalogue_entry_obj.type in [catalogue_entries_models.CatalogueEntryType.SUBSCRIPTION_QUERY, catalogue_entries_models.CatalogueEntryType.SUBSCRIPTION_POSTGIS,]:
             display_symbology_definition_tab = True
-        elif catalogue_entry_obj.type == catalogue_entries_models.CatalogueEntryType.SPATIAL_FILE and not catalogue_entry_obj.file_extension.lower() in ['.tif', '.tiff',]:
+        elif catalogue_entry_obj.type == catalogue_entries_models.CatalogueEntryType.SPATIAL_FILE: 
             display_symbology_definition_tab = True
 
         if display_symbology_definition_tab and not hasattr(catalogue_entry_obj, 'symbology'):
